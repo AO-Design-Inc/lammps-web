@@ -72,15 +72,15 @@ parser.add_argument('-p','--packages', nargs='*', help='LAMMPS packages ("-p non
 parser.add_argument('--head', help='clone newest version at head commit. WARNING, this might not compile.', required=False, action='store_true')
 
 if len(sys.argv) == 1:
-	print helpstr
+	print (helpstr)
 
 args = parser.parse_args()
 command = args.command
 
-print "Packages: ", args.packages
+print ("Packages: ", args.packages)
 
 if not command in ["install", "clone", "update", "remove", "cleanpackages", "compile"]:
-	print "Error, '"+command+"' is not a valid command. Must be one of 'install', 'update', 'remove'"
+	print ("Error, '"+command+"' is not a valid command. Must be one of 'install', 'update', 'remove'")
 	exit()
 
 if command == "remove":
