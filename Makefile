@@ -4,6 +4,7 @@ MAXMEMORY = 512MB
 LAMMPS_SOURCE := $(wildcard lammps/src/*.cpp)
 LAMMPS_OBJ_FILES := $(addprefix obj/,$(notdir $(LAMMPS_SOURCE:.cpp=.o)))
 
+# -s ERROR_ON_UNDEFINED_SYMBOLS=0 to silence popen
 LD_FLAGS := -O3
 CC_FLAGS := -O3 -DLAMMPS_EXCEPTIONS -DLAMMPS_SMALLSMALL
 INCLUDE_FLAGS := -Ilammps/src/STUBS/ -Ilammps/src
